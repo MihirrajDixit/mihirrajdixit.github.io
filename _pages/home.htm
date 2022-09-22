@@ -1,0 +1,32 @@
+---
+layout: home
+title: Home
+permalink: /
+<!-- nav: true -->
+<!-- nav_order: 1 -->
+---
+<script>
+    $.getJSON("https://ipinfo.io/?token=f42fc24f4a15f9", function (data) {
+        const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
+        console.log(data);
+        url_ = "https://my-website-40af0-default-rtdb.europe-west1.firebasedatabase.app/.json"
+        $.ajax({
+            type: "POST",
+            url: url_,
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            accept: "application/json",
+            success: function (data) { console.log("Sent userdata to firebase") },
+            error: function (errMsg) {
+                console.log(errMsg);
+            }
+        });
+        $("#holder").html("Hello " + data.ip + ", welcome to my site!\nIt seems you are located in " + regionNames.of(data.country) + " and your ISP is " + data.org + ". \n More information can be found in the console if you can open it.")
+    })
+</script>
+<div>
+    <p id="holder"></p>
+    <br />
+    <p>Thank you for visiting this site.</p>
+</div>

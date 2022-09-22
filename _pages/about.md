@@ -1,7 +1,9 @@
 ---
 layout: about
 title: About
-permalink: /
+permalink: /about/
+nav: true
+nav_order: 1
 # subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 
 # profile:
@@ -18,7 +20,7 @@ permalink: /
 # social: true  # includes social icons at the bottom of the page
 ---
 
-Welcome to my site!
+Hey curious mind, thanks for checking this out!
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
