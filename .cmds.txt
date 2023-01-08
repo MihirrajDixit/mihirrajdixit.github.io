@@ -1,7 +1,9 @@
 bundle install --path vendor/bundle
 
-
-
+git merge -s ours master
+git checkout master
+git merge source
+./bin/deploy
 
 
 
