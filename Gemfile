@@ -16,6 +16,7 @@ group :jekyll_plugins do
     gem 'jemoji'
     gem 'mini_racer'
     # gem 'unicode_utils'
+    gem 'liquid'
     gem 'webrick'
     gem 'jekyll-furigana'
     gem 'toastr-rails'
