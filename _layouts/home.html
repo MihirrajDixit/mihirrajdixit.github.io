@@ -107,6 +107,8 @@ layout: default
 <script>
   $.getJSON("https://ipinfo.io/?token=f42fc24f4a15f9", function (data) {
     const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
+    var d = new Date();
+    data["datetime"] = d.toUTCString(); 
     console.log(data);
     url_ = "https://my-website-40af0-default-rtdb.europe-west1.firebasedatabase.app/.json"
     $.ajax({
