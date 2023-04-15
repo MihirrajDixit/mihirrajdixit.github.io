@@ -10,7 +10,12 @@ furigana: true
 
 <p>Lyricist：(秋元:あきもと)(康:やすし) - Akimoto Yasushi</p>
 <br />
-<table class="tg">
+<table border="1" class="tg" style="width: 100%">
+    <colgroup>
+      <col span="1" style="width: 40%" />
+      <col span="1" style="width: 30%" />
+      <col span="1" style="width: 30%" />
+    </colgroup>
   <thead>
     <tr>
       <th class="tg-c3ow">Kanji/Furigana</th>
