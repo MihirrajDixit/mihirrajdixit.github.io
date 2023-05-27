@@ -111,7 +111,7 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Ninja's Blog # blog_name will be displayed in your blog page
-blog_nav_title: My Space # your blog must have a title for it to be displayed in the nav bar
+blog_nav_title: My Inkverse # your blog must have a title for it to be displayed in the nav bar
 blog_description: Welcome to my blog! Here, I write random pieces.
 permalink: /blog/:year/:title/
 
