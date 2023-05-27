@@ -5,7 +5,7 @@ install:
 
 commit:
 	git add .
-	git commit -m "refined CV"
+	git commit -m "Added map and badges"
 	git push
 
 merge:
