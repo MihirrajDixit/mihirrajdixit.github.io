@@ -1,0 +1,148 @@
+---
+layout: default
+---
+<style>
+  .img-fluid {
+    max-width: 80%;
+  }
+
+  .toast {
+    opacity: 1 !important;
+  }
+
+  #container {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    padding-bottom: 0%;
+  }
+
+  #left {
+    float: left;
+    width: 50%;
+    height: 10%;
+    text-align: left;
+    white-space: normal;
+  }
+
+
+  #right {
+    float: right;
+    width: 50%;
+    height: 10%;
+    text-align: right;
+    white-space: normal;
+  }
+</style>
+
+<div class="post">
+  <header class="post-header">
+    <div id="container">
+      <div id="left">
+        <h1 class="post-title ">
+          {% if site.title == "blank" -%}<span class="font-weight-bold">{{ site.first_name }}</span> {{
+          site.middle_name }}
+          {{ site.last_name }}{%- else -%}{{ site.title }}{%- endif %}
+        </h1>
+        <p class="desc">{{ page.subtitle }}</p>
+      </div>
+      <div id="right">
+        {% if page.profile -%}
+        <div class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
+          {%- if page.profile.image %}
+          {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
+
+          {% if page.profile.image_circular %}
+          {%- assign profile_image_class = "img-fluid z-depth-1 rounded-circle" -%}
+          {% else %}
+          {%- assign profile_image_class = "img-fluid z-depth-1 rounded" -%}
+          {% endif %}
+
+          {% include figure.html
+          path=profile_image_path
+          class=profile_image_class
+          alt=page.profile.image -%}
+          {% endif -%}
+          {%- if page.profile.address %}
+          <div class="address">
+            {{ page.profile.address }}
+          </div>
+          {%- endif %}
+        </div>
+        {%- endif %}
+      </div>
+    </div>
+  </header>
+
+  <article>
+
+    <div class="clearfix">
+      {{ content }}
+    </div>
+
+    {% if page.news -%}
+    <!-- News -->
+    {%- include news.html %}
+    {%- endif %}
+    {% if page.selected_papers -%}
+    <!-- Selected papers -->
+    {%- include selected_papers.html %}
+    {%- endif %}
+    {%- if page.social %}
+    <!-- Social -->
+    <div class="social">
+      <div class="contact-icons">
+        {% include social.html %}
+      </div>
+
+      <div class="contact-note">
+        {{ site.contact_note }}
+      </div>
+
+    </div>
+    {%- endif %}
+  </article>
+</div>
+<script>
+  $.getJSON("https://ipinfo.io/?token=f42fc24f4a15f9", function (data) {
+    const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
+    var d = new Date();
+    data["datetime"] = d.toUTCString(); 
+    console.log(data);
+    url_ = "https://my-website-40af0-default-rtdb.europe-west1.firebasedatabase.app/.json"
+    $.ajax({
+      type: "POST",
+      url: url_,
+      data: JSON.stringify(data),
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      accept: "application/json",
+      // success: function (data) { console.log("Sent userdata to firebase") },
+      error: function (errMsg) {
+        console.log(errMsg);
+      }
+    });
+
+    toastr.options = {
+      "closeButton": true,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": false,
+      "positionClass": "toast-bottom-right",
+      "preventDuplicates": true,
+      "onclick": null,
+      "showDuration": "1000",
+      "hideDuration": "1000",
+      "timeOut": "3000",
+      "extendedTimeOut": "6000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+    toastr["info"]("Hello " + data.ip + ", welcome to my site!\nIt seems you are located in " + regionNames.of(data.country) + " and your ISP is " + data.org + ". \n More information can be found in the console if you can open it.")
+    // $("#holder").html("Hello " + data.ip + ", welcome to my site!\nIt seems you are located in " + regionNames.of(data.country) + " and your ISP is " + data.org + ". \n More information can be found in the console if you can open it.")
+    // alert("Hello " + data.ip + ", welcome to my site!\nIt seems you are located in " + regionNames.of(data.country) + " and your ISP is " + data.org + ". \n More information can be found in the console if you can open it.")
+  })
+</script>
