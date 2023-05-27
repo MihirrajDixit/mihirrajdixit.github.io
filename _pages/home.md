@@ -29,8 +29,6 @@ If you need assistance with anything, feel free to reach out to me.
 
 
 
-#### **Some environment friendly initiatives by this site**
+#### **Some environment friendly initiative by this site**
 
-<div id="wcb" class="carbonbadge"></div>
-<script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
 <img src="https://api.thegreenwebfoundation.org/greencheckimage/mihirrajdixit.me?nocache=true" alt="This website is hosted Green - checked by thegreenwebfoundation.org">
