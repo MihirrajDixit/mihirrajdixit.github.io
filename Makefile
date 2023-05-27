@@ -19,6 +19,6 @@ deploy:
 serve:
 	bundle exec jekyll serve
 
-run: install serve
+# run: install serve
 	
 
