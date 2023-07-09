@@ -9,7 +9,7 @@ layout: default
             <p class="post-description">{{ page.description }}</p> -->
   </header>
   <article>
-    <div id="mapdiv" style="width: 100%; height: 300px;"></div>
+    <div id="mapdiv" style="width: 100%; height: 400px;"></div>
     {{ content }}
     <script type="text/javascript">
       var map = AmCharts.makeChart("mapdiv", {
@@ -17,7 +17,7 @@ layout: default
         theme: "dark",
         projection: "mercator",
         panEventsEnabled: true,
-        backgroundColor: "#535364",
+        backgroundColor: "#8CB6F6",
         backgroundAlpha: 1,
         zoomControl: {
           zoomControlEnabled: true,
@@ -34,10 +34,10 @@ layout: default
                 id: "IN",
                 showAsSelected: true,
               },
-              // {
-              //   id: "BG",
-              //   showAsSelected: true,
-              // },
+              {
+                id: "BG",
+                showAsSelected: true,
+              },
               {
                 id: "HR",
                 showAsSelected: true,
@@ -66,10 +66,10 @@ layout: default
                 id: "NL",
                 showAsSelected: true,
               },
-              // {
-              //   id: "RO",
-              //   showAsSelected: true,
-              // },
+              {
+                id: "RO",
+                showAsSelected: true,
+              },
               {
                 id: "CH",
                 showAsSelected: true,
@@ -110,11 +110,11 @@ layout: default
         },
         areasSettings: {
           autoZoom: true,
-          color: "#B4B4B7",
-          colorSolid: "#4080C0",
-          selectedColor: "#69B2BB",
+          color: "#EEEFE0",
+          colorSolid: "#94CDA2",
+          selectedColor: "#95CAA3",
           outlineColor: "#666666",
-          rollOverColor: "#9EC2F7",
+          rollOverColor: "#A3D3B3",
           rollOverOutlineColor: "#000000",
         },
       });
