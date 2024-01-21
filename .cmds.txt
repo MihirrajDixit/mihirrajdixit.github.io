@@ -1,5 +1,7 @@
 bundle install --path vendor/bundle
 
+sudo apt install ruby-dev
+sudo apt install ruby-bundler
 git merge -s ours master
 git checkout master
 git merge source
