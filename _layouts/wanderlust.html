@@ -12,6 +12,118 @@ layout: default
     <div id="mapdiv" style="width: 100%; height: 400px;"></div>
     {{ content }}
     <script type="text/javascript">
+      var areas = [
+        {
+          id: "BE",
+          showAsSelected: true,
+        },
+        {
+          id: "IN",
+          showAsSelected: true,
+        },
+        {
+          id: "BG",
+          showAsSelected: true,
+        },
+        {
+          id: "HR",
+          showAsSelected: true,
+        },
+        {
+          id: "FR",
+          showAsSelected: true,
+        },
+        {
+          id: "DE",
+          showAsSelected: true,
+        },
+        {
+          id: "IT",
+          showAsSelected: true,
+        },
+        {
+          id: "JP",
+          showAsSelected: true,
+        },
+        {
+          id: "LI",
+          showAsSelected: true,
+        },
+        {
+          id: "NL",
+          showAsSelected: true,
+        },
+        {
+          id: "RO",
+          showAsSelected: true,
+        },
+        {
+          id: "CH",
+          showAsSelected: true,
+        },
+        {
+          id: "VA",
+          showAsSelected: true,
+        },
+        {
+          id: "AT",
+          showAsSelected: true,
+        },
+        {
+          id: "HU",
+          showAsSelected: true,
+        },
+        {
+          id: "GB",
+          showAsSelected: true,
+        },
+        {
+          id: "LU",
+          showAsSelected: true,
+        },
+        {
+          id: "SI",
+          showAsSelected: true,
+        },
+        {
+          id: "TH",
+          showAsSelected: true,
+        },
+        {
+          id: "SG",
+          showAsSelected: true,
+        },
+        {
+          id: "FI",
+          showAsSelected: true,
+        }, 
+        {
+          id: "LV",
+          showAsSelected: true,
+        }, 
+        {
+          id: "LT",
+          showAsSelected: true,
+        }, 
+        {
+          id: "EE",
+          showAsSelected: true,
+        }, 
+        {
+          id: "CZ",
+          showAsSelected: true,
+        }, 
+        {
+          id: "PL",
+          showAsSelected: true,
+        }, 
+        {
+          id: "SK",
+          showAsSelected: true,
+        },
+      ]
+      console.log("Total Countries visited " + areas.length);
+
       var map = AmCharts.makeChart("mapdiv", {
         type: "map",
         theme: "dark",
@@ -25,88 +137,7 @@ layout: default
         dataProvider: {
           map: "worldIndiaLow",
           getAreasFromMap: true,
-          areas: [
-          {
-                id: "BE",
-                showAsSelected: true,
-              },
-              {
-                id: "IN",
-                showAsSelected: true,
-              },
-              {
-                id: "BG",
-                showAsSelected: true,
-              },
-              {
-                id: "HR",
-                showAsSelected: true,
-              },
-              {
-                id: "FR",
-                showAsSelected: true,
-              },
-              {
-                id: "DE",
-                showAsSelected: true,
-              },
-              {
-                id: "IT",
-                showAsSelected: true,
-              },
-              {
-                id: "JP",
-                showAsSelected: true,
-              },
-              {
-                id: "LI",
-                showAsSelected: true,
-              },
-              {
-                id: "NL",
-                showAsSelected: true,
-              },
-              {
-                id: "RO",
-                showAsSelected: true,
-              },
-              {
-                id: "CH",
-                showAsSelected: true,
-              },
-              {
-                id: "VA",
-                showAsSelected: true,
-              },
-              {
-                id: "AT",
-                showAsSelected: true,
-              },
-              {
-                id: "HU",
-                showAsSelected: true,
-              },
-              {
-                id: "GB",
-                showAsSelected: true,
-              },
-              {
-                id: "LU",
-                showAsSelected: true,
-              },
-              {
-                id: "SI",
-                showAsSelected: true,
-              },
-              {
-                id: "TH",
-                showAsSelected: true,
-              },
-              {
-                id: "SG",
-                showAsSelected: true,
-              },
-          ],
+          areas: areas,
         },
         areasSettings: {
           autoZoom: true,
